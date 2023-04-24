@@ -19,7 +19,7 @@ jobs:
         ini-values: post_max_size=256M, max_execution_time=180, max_input_time=180
     - uses: actions/checkout@v3
     - name: Copy environment files
-      run: cp environment/local/.env.testing .env
+      run: cp environments/local/.env.testing .env
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Directory Permissions
