@@ -40,23 +40,12 @@ class RouteServiceProvider extends ServiceProvider
             'api',
             'json.response',
             'auth:api',
-            'role:administrator',
-            'scope:adm',
+            //'role:administrator',
+            //'scope:adm',
         ])
             ->prefix('api/adm/v1')
             ->as('api.adm.')
-            ->group(app_path('Consumers/Administrators/Http/routes.php'));
-
-        Route::middleware([
-            'api',
-            'json.response',
-            'auth:api',
-            'role:customer',
-            'scope:customers',
-        ])
-            ->prefix('api/v1')
-            ->as('api.customers.')
-            ->group(app_path('Consumers/Customers/Http/routes.php'));
+            ->group(fn () => Route::get('/adm', fn () => 'Hi!'));
     }
 
     public function web(): void
