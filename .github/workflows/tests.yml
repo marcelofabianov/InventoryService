@@ -20,9 +20,12 @@ jobs:
           php-version: 8.2
           tools: composer:v2
           coverage: xdebug
+          extensions: sqlite3, bcmath, curl, dom, gd, iconv, json, mbstring, openssl, pdo, pdo_sqlite
 
       - name: Install Dependencies
         run: composer install --no-interaction --no-progress --no-suggest --prefer-dist --no-scripts --optimize-autoloader
+        working-directory: ${{ github.workspace }}
 
       - name: Tests
         run: ./vendor/bin/pest
+        working-directory: ${{ github.workspace }}
