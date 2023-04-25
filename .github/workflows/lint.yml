@@ -34,7 +34,7 @@ jobs:
       - name: Auto-commit fixes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'PHP CS Fixer fixes'
+          commit_message: 'Laravel Pint fixes'
           commit_options: '--no-verify'
           file_pattern: '**/*.php'
 
