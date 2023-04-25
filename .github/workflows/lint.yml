@@ -31,8 +31,10 @@ jobs:
         run: vendor/bin/pint --config=pint.json
         working-directory: ${{ github.workspace }}
 
-      - name: Commit changes
+      - name: Auto-commit fixes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: PHP Linting (Pint)
-          skip_fetch: true
+          commit_message: 'PHP CS Fixer fixes'
+          commit_options: '--no-verify'
+          file_pattern: '**/*.php'
+
